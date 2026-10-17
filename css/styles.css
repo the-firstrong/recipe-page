@@ -1,0 +1,178 @@
+:root {
+    /* Fonts */
+    --fonts-heading: 'Young Serif', serif;
+    --fonts-body: 'Outfit', sans-serif;
+
+    /* Colors */
+    --stone-color: #5F564D;
+    --lightstone-color: #5F564D;
+    --brown-color: #854632;
+
+    /* Sizing */
+    --heading-size: 28px;
+    --body-size: 16px;
+    --line-height-body: 1.5;
+    --font-weight-regular: 400;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #F3E5D7;
+    font-family: var(--fonts-body);
+    color: var(--stone-color);
+    font-size: var(--body-size);
+    line-height: var(--line-height-body);
+    font-weight: var(--font-weight-regular);
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    background-color: #FFFFFF;
+    width: calc(100% - 40px);
+    max-width: 736px;
+    margin-inline: auto;
+    padding: clamp(10px, 2.77vw, 40px);
+    margin-block: clamp(40px, 8.8vw, 128px);
+    border-radius: clamp(4px, 1.6vw, 24px);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-inline: auto;
+}
+
+.heading {
+    margin-top: 40px;
+}
+
+h1 {
+    font-family: var(--fonts-heading);
+    font-size: 40px;
+    font-weight: var(--font-weight-regular);
+    line-height: 1;
+    color: #312E2C;
+    margin-bottom: 24px;
+}
+
+.preparation-time {
+    margin-block: 32px;
+    background-color: #FFF7FB;
+    width: 100%;
+    max-width: 537px;
+    border-radius: 12px;
+    padding: 24px;
+}
+
+.preparation-time h2 {
+    font-family: var(--fonts-body);
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1;
+    color: #7A284E;
+    margin-bottom: 16px;
+}
+
+ul {
+    list-style-position: inside;
+    margin-left: 8px;
+}
+
+.preparation-time li::marker {
+    color: #7A284E;
+}
+
+.bold {
+    font-weight: 700;
+}
+
+h2 {
+    font-family: var(--fonts-heading);
+    font-size: var(--heading-size);
+    font-weight: 400;
+    line-height: 1;
+    color: var(--brown-color);
+    margin-bottom: 24px;
+}
+
+.ingredients li::marker {
+    color: var(--brown-color);
+}
+
+hr {
+    width: 100%;
+    margin-block: 32px;
+    height: 1px;
+    background-color: #F3E5D7;
+    border: none;
+
+}
+
+ol {
+    font-family: var(--fonts-body);
+    list-style-position: inside;
+    margin-left: 8px;
+}
+
+ol li::marker {
+    color: var(--brown-color);
+    font-family: var(--fonts-body);
+    font-weight: 700;
+}
+
+li {
+    margin-bottom: 8px;
+}
+
+li:last-child {
+    margin-bottom: 0;
+}
+
+.nutrition p {
+    margin-bottom: 24px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+tr {
+    text-align: left;
+    border-bottom: 1px solid #F3E5D7;
+    padding-inline: 32px;
+}
+
+th {
+    font-weight: var(--font-weight-regular);
+    padding-block: 12px;
+    padding-left: 32px;
+    padding-right: 8px;
+}
+
+td {
+    font-weight: 700;
+    color: var(--brown-color);
+    padding-block: 12px;
+    padding-right: 32px;
+    padding-left: 8px;
+}
+
+tr:first-child th,
+tr:first-child td {
+    padding-top: 0;
+}
+
+tr:last-child th,
+tr:last-child td {
+    padding-bottom: 0;
+}
+
+/* The end of the table styling */
