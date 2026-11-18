@@ -1,18 +1,32 @@
 :root {
     /* Fonts */
-    --fonts-heading: 'Young Serif', serif;
-    --fonts-body: 'Outfit', sans-serif;
+    --font-heading: 'Young Serif', serif;
+    --font-body: 'Outfit', sans-serif;
 
     /* Colors */
-    --stone-color: #5F564D;
-    --lightstone-color: #5F564D;
-    --brown-color: #854632;
+    --stone-600: #5F564D;
+    --stone-150: #E3DDD7;
+    --brown-800: #854632;
+    --rose-800: #7A284E;
 
-    /* Sizing */
-    --heading-size: 28px;
-    --body-size: 16px;
-    --line-height-body: 1.5;
-    --font-weight-regular: 400;
+    /* Font sizes */
+    --text-lg: 1.75rem;
+    --text-base: 1rem;
+
+    /* Font weights */
+    --font-regular: 400;
+    --font-bold: 700;
+
+    /* Line heights */
+    --line-height-normal: 1.5;
+    --line-height-tight: 1;
+
+    /* Spacing */
+    --spacing-40: 2.5rem;
+    --spacing-32: 2rem;
+    --spacing-24: 1.5rem;
+    --spacing-16: 1rem;
+    --spacing-8: 0.5rem;
 }
 
 * {
@@ -22,121 +36,145 @@
 }
 
 body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
     background-color: #F3E5D7;
-    font-family: var(--fonts-body);
-    color: var(--stone-color);
-    font-size: var(--body-size);
-    line-height: var(--line-height-body);
-    font-weight: var(--font-weight-regular);
-    margin: 0;
-    padding: 0;
+    color: var(--stone-600);
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    font-weight: var(--font-regular);
+    line-height: var(--line-height-normal);
 }
 
 .container {
     background-color: #FFFFFF;
-    width: calc(100% - 40px);
-    max-width: 736px;
-    margin-inline: auto;
-    padding: clamp(10px, 2.77vw, 40px);
-    margin-block: clamp(40px, 8.8vw, 128px);
-    border-radius: clamp(4px, 1.6vw, 24px);
+    width: 100%;
+    max-width: 46rem;
+    padding: 2.5rem;
+    margin-block: 8rem;
+    border-radius: 24px;
+}
+
+.preview {
+    margin-block-end: var(--spacing-40);
 }
 
 img {
-    max-width: 100%;
+    width: 100%;
     height: auto;
     display: block;
-    margin-inline: auto;
-}
-
-.heading {
-    margin-top: 40px;
-}
-
-h1 {
-    font-family: var(--fonts-heading);
-    font-size: 40px;
-    font-weight: var(--font-weight-regular);
-    line-height: 1;
-    color: #312E2C;
-    margin-bottom: 24px;
-}
-
-.preparation-time {
-    margin-block: 32px;
-    background-color: #FFF7FB;
-    width: 100%;
-    max-width: 537px;
     border-radius: 12px;
-    padding: 24px;
 }
 
-.preparation-time h2 {
-    font-family: var(--fonts-body);
-    font-size: 20px;
-    font-weight: 600;
+/* Shared styles */
+.heading,
+.preparation-time {
+    margin-block-end: var(--spacing-32);
+}
+
+h1,
+h2 {
+    font-family: var(--font-heading);
+    font-size: var(--text-lg);
+    font-weight: var(--font-regular);
     line-height: 1;
-    color: #7A284E;
-    margin-bottom: 16px;
-}
-
-ul {
-    list-style-position: inside;
-    margin-left: 8px;
-}
-
-.preparation-time li::marker {
-    color: #7A284E;
+    color: var(--brown-800);
+    margin-block-end: var(--spacing-24);
 }
 
 .bold {
-    font-weight: 700;
-}
-
-h2 {
-    font-family: var(--fonts-heading);
-    font-size: var(--heading-size);
-    font-weight: 400;
-    line-height: 1;
-    color: var(--brown-color);
-    margin-bottom: 24px;
-}
-
-.ingredients li::marker {
-    color: var(--brown-color);
+    font-weight: var(--font-bold);
 }
 
 hr {
-    width: 100%;
-    margin-block: 32px;
-    height: 1px;
-    background-color: #F3E5D7;
     border: none;
-
+    outline: 0.5px solid #E3DDD7;
+    margin-block: var(--spacing-32);
 }
 
+/* Heading */
+.heading h1 {
+    font-size: 2.5rem;
+    color: #312E2C;
+}
+
+/* Preparation time */
+.preparation-time {
+    background-color: #FFF7FB;
+    width: 100%;
+    border-radius: 12px;
+    padding: var(--spacing-24);
+}
+
+.preparation-time h2 {
+    font-family: var(--font-body);
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #7A284E;
+    margin-block-end: var(--spacing-16);
+}
+
+/* List styles */
+ul,
 ol {
-    font-family: var(--fonts-body);
-    list-style-position: inside;
-    margin-left: 8px;
+    list-style: none;
 }
 
-ol li::marker {
-    color: var(--brown-color);
-    font-family: var(--fonts-body);
-    font-weight: 700;
+
+.container li {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-16);
+    padding-inline-start: var(--spacing-8);
 }
 
-li {
-    margin-bottom: 8px;
+.instructions li {
+    align-items: baseline;
 }
 
-li:last-child {
-    margin-bottom: 0;
+ul li::before {
+    content: "";
+    background-color: #7A284E;
+    width: 0.25rem;
+    height: 0.25rem;
+    margin-inline-end: 12px;
+    flex-shrink: 0;
+    border-radius: 50%;
 }
 
+.ingredients li::before {
+    background-color: var(--brown-800);
+}
+
+li>span {
+    flex: 1;
+}
+
+.container ol {
+    counter-reset: step;
+}
+
+ol li {
+    counter-increment: step;
+}
+
+ol li::before {
+    content: counter(step) ".";
+    color: var(--brown-800);
+    font-weight: var(--font-bold);
+    margin-inline-end: 5.15px;
+    flex-shrink: 0;
+}
+
+.container li:not(:last-child) {
+    margin-block-end: var(--spacing-8);
+}
+
+/* Nutrition */
 .nutrition p {
-    margin-bottom: 24px;
+    margin-block-end: var(--spacing-24);
 }
 
 table {
@@ -146,33 +184,33 @@ table {
 
 tr {
     text-align: left;
-    border-bottom: 1px solid #F3E5D7;
-    padding-inline: 32px;
+}
+
+tr:not(:last-child) {
+    box-shadow: inset 0 -1px 0 #E3DDD7;
 }
 
 th {
-    font-weight: var(--font-weight-regular);
-    padding-block: 12px;
-    padding-left: 32px;
-    padding-right: 8px;
+    width: 50%;
+    font-weight: var(--font-regular);
+    padding-block: 0.75rem;
+    padding-inline-start: var(--spacing-32);
 }
 
 td {
-    font-weight: 700;
-    color: var(--brown-color);
-    padding-block: 12px;
-    padding-right: 32px;
-    padding-left: 8px;
+    color: var(--brown-800);
+    font-weight: var(--font-bold);
+    padding-block: 0.75rem;
+    padding-inline-start: var(--spacing-8);
+    padding-inline-end: var(--spacing-32);
 }
 
 tr:first-child th,
 tr:first-child td {
-    padding-top: 0;
+    padding-block-start: 0;
 }
 
 tr:last-child th,
 tr:last-child td {
-    padding-bottom: 0;
+    padding-block-end: 0;
 }
-
-/* The end of the table styling */
