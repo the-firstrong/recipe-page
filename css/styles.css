@@ -39,6 +39,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    min-width: 16.25rem;
     min-height: 100vh;
     background-color: #F3E5D7;
     color: var(--stone-600);
@@ -58,6 +59,7 @@ body {
 }
 
 .preview {
+    display: block;
     margin-block-end: var(--spacing-40);
 }
 
@@ -213,4 +215,38 @@ tr:first-child td {
 tr:last-child th,
 tr:last-child td {
     padding-block-end: 0;
+}
+
+/* Tablet */
+@media (max-width: 48rem) {
+    .container {
+        max-width: 616px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 35rem) {
+    .container {
+        max-width: 100%;
+        margin-block: 0;
+        padding: 0;
+        border-radius: 0;
+    }
+
+    .content {
+        padding-block: var(--spacing-40);
+        padding-inline: var(--spacing-32);
+    }
+
+    .preview {
+        margin-block-end: 0;
+    }
+
+    .preview img {
+        border-radius: 0;
+    }
+
+    .heading h1 {
+        font-size: 2.25rem;
+    }
 }
